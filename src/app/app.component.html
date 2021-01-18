@@ -6,5 +6,14 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <p>hello ionic</p>
+  
+  <ion-input #input (ionInput)="inputChanged($event)" type="text"></ion-input>
+  <ion-list [hidden]="items.length <= 0">
+    <ion-item (click)="selected(item, input)" *ngFor="let item of items">
+      {{item.name}}
+    </ion-item>
+  </ion-list>
+  <pre>
+    {{form.value|json}}
+  </pre>
 </ion-content>

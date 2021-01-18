@@ -18,9 +18,9 @@ export class AppComponent {
     private readonly _apiService: ApiService
   ) {}
 
-  async inputChanged($event): Promise<void> {
+  async inputChanged($event: { target: HTMLIonInputElement }): Promise<void> {
     // récupération de la valeur saisie
-    const value = $event.target.value;
+    const value = $event.target.value as string;
     // vider la list si le champ de saisie est vide
     if (value.length <= 0) {
       this.items = [];

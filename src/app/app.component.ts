@@ -9,13 +9,13 @@ import { ApiService } from './api.service';
 })
 export class AppComponent {
 
-  items: {name: string}[] = [];
-  form: FormGroup = new FormGroup({
+  public items: {name: string}[] = [];
+  public readonly form: FormGroup = new FormGroup({
     selected: new FormControl(null)
   });
 
   constructor(
-    private _apiService: ApiService
+    private readonly _apiService: ApiService
   ) {}
 
   async inputChanged($event): Promise<void> {
